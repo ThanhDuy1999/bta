@@ -24,7 +24,7 @@ function MovieDetail({ navigation, route }) {
     const [loading, setLoading] = useState(true);
     const [director, setDirector] = useState('');
     const { movie } = route.params;
-
+    //sua dong nay
     useEffect(() => {
         setLoading(true);
         fetchCredits(movie.id).then((data) => {
