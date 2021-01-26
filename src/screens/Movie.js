@@ -12,7 +12,6 @@ import {
 import { Card } from 'react-native-paper';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-import MoviePoster from '../component/MoviePoster';
 import Loading from '../component/Loading';
 
 import { fetchPopularMovies } from '../api/TMDB';
@@ -62,8 +61,8 @@ const Movie = ({ navigation }) => {
                         onChangeText={(text) => setSearch(text)} />
                     <TouchableOpacity
                         onPress={() => {
-                            console.log(search);
                             setSearchNow(!searchNow);
+                            setMovies([]);
                         }}>
                         <FontAwesome
                             name={'search'}
@@ -75,6 +74,7 @@ const Movie = ({ navigation }) => {
                 <View style={styles.movieList}>
                     <FlatList
                         data={movies}
+                        keyExtractor={item => item.id}
                         numColumns={2}
                         renderItem={({ item, index }) => {
                             return (
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     },
     movieList: {
         top: height * 0.05,
-        marginBottom: 250,
+        marginBottom: 235,
     },
     movieCard: {
         flex: 1,
