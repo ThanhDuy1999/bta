@@ -24,6 +24,8 @@ const MainTicket = (props) => {
     const [popupIsOpen, setPopupIsOpen] = useState(false);
     const [chosenDay, setChosenDay] = useState(0);
     const [chosenTime, setChosenTime] = useState(null);
+    //const [valueDay, setValueDay] = useState('');
+    //const [valueTime, setValueTime] = useState('');
 
     useEffect(() => {
         setLoading(true);
@@ -53,14 +55,17 @@ const MainTicket = (props) => {
     }
 
     const bookTicket = () => {
-        if (chosenTime == null) {
-            alert('Please select time');
+        if (chosenTime == null || chosenDay == null) {
+            alert('Please select date & time');
         } else {
             closeMovie();
             props.navigation.push(
                 'Confirmation',
                 {
                     code: Math.random().toString(36).substring(6).toUpperCase(),
+                    movie:movieInfo.title,
+                    day: chosenDay,
+                    time: chosenTime,
                 }
             );
         }
@@ -89,6 +94,8 @@ const MainTicket = (props) => {
                         chosenTime={chosenTime}
                         onChooseDay={chooseDay}
                         onChooseTime={chooseTime}
+                        //onChooseValueDay={(value) => setValueDay(value)}
+                        //onChooseValueTime={(value) => setValueTime(value)}
                         onBook={bookTicket} />
                 </SafeAreaView>
             </View>

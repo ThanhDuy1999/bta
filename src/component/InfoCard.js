@@ -21,7 +21,7 @@ const InfoCard = ({ movie, director }) => {
                 style={styles.poster}
             />
             <View style={styles.textInfo}>
-                <Text style={styles.title}>{movie.original_title}</Text>
+                <Text style={styles.title}>{movie.title}</Text>
                 <Text style={{ color: 'white', fontWeight: 'bold' }}>PLOT</Text>
                 <Text style={{ color: 'white', fontSize: 10 }}>
                     {movie.overview.length < 100

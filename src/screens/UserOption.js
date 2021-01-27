@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 const colorDefault = 'rgba(255, 255, 255, 1)', //white
-colorSelected = 'rgba(103,58,183, 1)'; //purple
+    colorSelected = 'rgba(103,58,183, 1)'; //purple
 
 class UserOption extends Component {
     static propTypes = {

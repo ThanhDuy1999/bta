@@ -11,9 +11,9 @@ class Confirmation extends Component {
     constructor(props){
         super(props)
     }
-    // componentDidMount(){
-    //     console.log(this.props.route.params.code)
-    // }
+    componentDidMount(){
+        console.log(this.props.route.params)
+    }
     static propTypes = {
         code: PropTypes.string,
     }

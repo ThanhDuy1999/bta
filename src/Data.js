@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 //format day
-export const days = ['Today', 'Tomorrow', moment().add(2, 'days').format('ddd, MMM D'), moment().add(3, 'days').format('ddd, MMM D'), moment().add(4, 'days').format('ddd, MMM D'), moment().add(5, 'days').format('ddd, MMM D'), moment().add(6, 'days').format('ddd, MMM D')];
+export const days = [moment().format('ddd, MMM D'), moment().add(1, 'days').format('ddd, MMM D'), moment().add(2, 'days').format('ddd, MMM D'), moment().add(3, 'days').format('ddd, MMM D'), moment().add(4, 'days').format('ddd, MMM D'), moment().add(5, 'days').format('ddd, MMM D'), moment().add(6, 'days').format('ddd, MMM D')];
 //format time
 export const times = ['7:00 AM', '9:00 AM', '11:10 AM', '12:00 AM', '1:50 PM', '4:30 PM', '6:00 PM', '8:10 PM', '10:50 PM'];
 

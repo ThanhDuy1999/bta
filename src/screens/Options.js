@@ -14,7 +14,7 @@ const optionWidth = (width - 0) / 3 - 10;
 class Options extends Component {
     static propTypes = {
         values: PropTypes.array.isRequired,
-        chosen: PropTypes.number,
+        chosen: PropTypes.string,
         onChoose: PropTypes.func.isRequired,
     }
 
@@ -35,8 +35,8 @@ class Options extends Component {
                         <View style={{ width: optionWidth }} key={index}>
                             <UserOption
                                 value={value}
-                                isChosen={index === chosen}
-                                onChoose={() => onChoose(index)} />
+                                isChosen={value === chosen}
+                                onChoose={() => onChoose(value)} />
                         </View>
                     )}
                 </ScrollView>
