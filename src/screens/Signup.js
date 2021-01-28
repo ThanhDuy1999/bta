@@ -11,19 +11,21 @@ import {
     Platform,
     TouchableOpacity,
     StatusBar,
+    Alert,
 } from 'react-native';
 
 const Signup = ({ navigation }) => {
     const [data, setData] = React.useState({
         email: '',
         password: '',
-        //comfirmPassword: '',
+        //username:'',
         checkTextInputChange: false,
         secureTextEntry: true,
         secureComfirmTextEntry: true,
         isValidUser: true,
         isValidPassword: true,
     })
+    //const [username,setUsername] = React.useState('')
 
     const textInputChange = (value) => {
         if (value.trim().length >= 4) {
@@ -88,7 +90,7 @@ const Signup = ({ navigation }) => {
 
             })
             .catch(e => {
-                Alert.alert('Warning','The email is invalid.',
+                Alert.alert('Warning', 'The email is invalid.',
                     [
                         { text: 'OK', onPress: () => { } }
                     ], { cancelable: true })
@@ -99,10 +101,24 @@ const Signup = ({ navigation }) => {
         <View style={styles.container}>
             <StatusBar backgroundColor='#FF8000' barStyle='light-content' />
             <View style={styles.header}>
-                <Text style={styles.textHeader}>Register Now!</Text>
+                <Text style={styles.textHeader}>Sign up to get started!</Text>
             </View>
             <View style={styles.footer}>
-                <Text style={styles.textFooter}>Email</Text>
+                <Text style={styles.textFooter}>Username</Text>
+                <View style={styles.action}>
+                    <FontAwesome
+                        name='user-circle'
+                        color='#05375a'
+                        size={20} />
+                    <TextInput
+                        placeholder='Your Username'
+                        style={styles.textInput}
+                        autoCapitalize='none'
+                        onChangeText={(value) => setUsername(value)}
+                        value={username} />
+                </View>
+
+                <Text style={[styles.textFooter, { marginTop: 35 }]}>Email</Text>
                 <View style={styles.action}>
                     <FontAwesome
                         name='user-o'

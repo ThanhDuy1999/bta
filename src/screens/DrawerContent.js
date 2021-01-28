@@ -20,7 +20,6 @@ import {
 } from '@react-navigation/drawer'
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-var avatar = require('../assets/images/user/avatar.jpg');
 const handleSignOut = () => {
     firebase
         .auth()
@@ -38,7 +37,7 @@ export function DrawerContent(props,{navigation}) {
                     <View style={styles.userInfoSection}>
                         <View style={{ flexDirection: 'row', marginTop: 15 }}>
                             <Avatar.Image
-                                source={avatar}
+                                source={null}
                                 size={50} />
                             <View style={{ marginLeft: 15, flexDirection: 'column' }}>
                                 <Title style={styles.title}>Thanh Duy</Title>
